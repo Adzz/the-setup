@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+sudo -v
+
+# Add Apps to the dock#
+########################
+
+
+ #Delete all items from dock to begin with
+  defaults delete com.apple.dock persistent-apps
+  defaults delete com.apple.dock persistent-others
+  killall Dock
+
+ #Add Google chrome to dock
+ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+ #Add iTerm to dock
+ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iTerm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+ #Add sqlitebrowser to dock
+ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/sqlitebrowser.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+#Add sequel pro to dock
+ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Sequel Pro.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+ #Add Slack to dock
+ defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Slack.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+
+ killall Dock

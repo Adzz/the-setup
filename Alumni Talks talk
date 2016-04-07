@@ -1,0 +1,70 @@
+On day one spent 3 hours setting up my machine for work.
+On day Two spent 6 hours setting my work machine for work.
+So on day three spent all day trying to automate the process.
+
+Like most problems it's a problem that's been solved before, the challege was to make it work for me, or surfdome.
+
+Use Cases:
+
+My machine, with the basic work setup
+Work machine with basic work setup
+Work machine with basic work setup AND my own customizations
+Old machine with basic work set up that maybe needs updating with new info.
+
+
+Chose to begin with 1.
+
+The basic idea was to create a repo on github with basic global settings and dotfiles. For me this included some sane vim settings, zshrc and bash settings, a global git ignore, some good basic brew formulaes and apps, basic OSX settings.... the oes on. For yourself depending on work env, might like tmux settings etc.
+
+The conundrum:
+
+So here was the idea, go to the repo clone down the file and run the script new_machine_setup, and away you go.
+
+Except to do that you need git. Which means you need homebrew. Which means you need Xcode command line tools...
+
+Starts to unravel the whole point.
+
+Solution? (maybe ask the audience or keen to hear anyone's at the end)
+
+What I chose:
+
+User goes to the github page( or webpage) and copy pastes the first set of instructions.
+
+This was improved to curl'ing the script from the repo. 
+
+curl https://raw.githubusercontent.com/Surfdome//master/.paddle_out
+
+This:
+
+Installs xcode, installs homebrew installs git. clones the dotfiles repo into home directory, cd's into the dotfiles directory. 
+
+From there you can run:
+
+
+The various scripts.
+
+If not a completely new machine, can just run symlink script. Will have all the stuff symlinked and setup how it should
+
+If new, you wanna run set_me_up.sh
+
+Let's do that now....
+
+
+
+
+
+
+
+
+
+
+
+NB use vim markdown presentation
+
+
+
+
+
+Extension:
+
+Setup Setup script. Set your own vars.

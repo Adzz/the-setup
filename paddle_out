@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+
+echo "Welcome to Surfdome $USER!"
+echo "First things first... lets install Xcode..."
+echo "We just need your password first"
+
+# Ask for password upfront:
+
+sudo -v
+
+# Shamelessly stolen from Paul Irish:
+#https://github.com/paulirish/dotfiles/blob/master/setup-a-new-machine.sh
+
+################################################################################
+# XCode and Command Line Tools install                                         #
+################################################################################
+
+#      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
+
+if ! xcode-select --print-path &> /dev/null; then
+
+    # Prompt user to install the XCode Command Line Tools
+    xcode-select --install &> /dev/null
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Wait until the XCode Command Line Tools are installed
+    until xcode-select --print-path &> /dev/null; do
+        sleep 5
+    done
+
+    print_result $? 'Install XCode Command Line Tools'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Point the `xcode-select` developer directory to
+    # the appropriate directory from within `Xcode.app`
+    # https://github.com/alrra/dotfiles/issues/13
+
+    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+    print_result $? 'Make "xcode-select" developer directory point to Xcode'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Prompt user to agree to the terms of the Xcode license
+    # https://github.com/alrra/dotfiles/issues/10
+
+    sudo xcodebuild -license
+    print_result $? 'Agree with the XCode Command Line Tools licence'
+
+fi
+###
+
+echo "Awesome, now we'll install homebrew..."
+
+################################################################################
+# Install Homebrew                                                             #
+################################################################################
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+###
+
+echo "Which means we can get git!"
+
+brew install git
+
+echo "Now we can get our dotfiles and Make Your OSX Great Again!"
+echo "We'll move to the home directory and clone down the dotfiles..."
+
+cd ~ && git clone https://github.com/surfdome/the_setup && cd the_setup
+
+
