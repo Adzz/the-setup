@@ -23,7 +23,11 @@ trim_trailing_whitespace = false
 
 # This global editor config leaves you with two options:
 
-# Make a .editorconfig in your home directory (~/.editorconfig) and so long as none of your .editorconfig files below that directory have a root = true option, that one in your home directory will be used as the fallback.
+# Make a .editorconfig in your home directory (~/.editorconfig) and so long as none of your
+# .editorconfig files below that directory have a root = true option, that one in your home directory 
+# will be used as the fallback.
 
-# A better option (in my opinion) is to make a local .editorconfig file in each project that is a hard link to one stored elsewhere (either something arbitrary like ~/.default-editorconfig or ~/.editorconfig for a default fallback also). Hard links can be made on Mac and Linux with the ln command.
+# A better option (in my opinion) is to make a local .editorconfig file in each project that is a 
+# hard link to one stored elsewhere (either something arbitrary like ~/.default-editorconfig 
+# or ~/.editorconfig for a default fallback also). Hard links can be made on Mac and Linux with the ln command.
 
