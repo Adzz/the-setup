@@ -1,4 +1,4 @@
 
 
 
-curl https://raw.githubusercontent.com/Surfdome/the_setup/master/paddle_out | sh
+curl https://raw.githubusercontent.com/surfdome/the_setup/master/paddle_out | sh
