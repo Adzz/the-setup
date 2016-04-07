@@ -16,13 +16,19 @@ echo ".........."
 echo "But don't panic, we also included some basic sane vim setings"
 echo "in case you ever get stuck there"
 echo "Make a note, your leader key is the space bar, feel free to look at the vimrc for more info"
-echo "Press enter to continue"
+echo "Press any key to continue"
 read
 
 ### Install oh-my-zsh
 
 echo "Installing oh-my-zsh for zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "oh-my-zsh installed!"
+echo "Head here to pick a theme"
+echo "https://github.com/robbyrussell/oh-my-zsh"
+
+echo "press any key to continue"
+read
 
 ### Text Editor
 
@@ -57,9 +63,9 @@ fi
 ### OSX Defaults
 
 echo "Setting up some good OSX defaults"
-sh .make_osx_great_again
+sh make_osx_great_again
 echo "Reseting the dock apps"
-sh .reset_dock_apps
+sh reset_dock_apps
 
 ### git setup
 
@@ -92,7 +98,8 @@ echo "https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-accou
 
 ### Symlinks...
 
-echo "Creating symlink to our vim file..."
-ln -s ~/.vimrc ~/the_setup/Dotfiles/.vimrc
-echo "...And zshrc...."
-#include zshrc
+sh symlinks
+
+echo "... Set up complete!"
+echo "One brand spanking new laptop ready for development."
+echo "Go get 'em tiger."

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+### Symlinks
+
+echo "This will create symlinks from the dotfiles you have cloned down to"
+echo "the files your computer uses to configure your apps."
+echo "You can change and customize the dotfiles and push them to github for"
+echo "access to your settings on any computer"
+
+echo "Press enter to continue"
+read
+
+echo "Creating a symlink to our vimrc"
+ln -s ~/the_setup/Dotfiles/.vimrc ~/.vimrc
+
+echo "Creating a symlink for our zshrc"
+ln -s ~/the_setup/Dotfiles/.zshrc ~/.zshrc
+
+echo "symlinks Complete!"

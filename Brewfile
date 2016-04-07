@@ -23,6 +23,7 @@ brew 'zsh'
 #Cask installs:
 
 cask 'google-chrome'
+cask 'google-chrome-canary'
 cask 'slack'
 cask 'flux'
 cask 'firefox'
