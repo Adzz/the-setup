@@ -1,6 +1,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
+export PATH="/bin:/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,8 +56,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/bin:/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/git/bin:/Users/$USER/Library/Android/sdk/platform-tools:/Users/$USER/Library/Android/sdk/tools:"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -86,4 +86,3 @@ source $ZSH/oh-my-zsh.sh
 alias postup="postgres -D /usr/local/var/postgres" #boots up the postgres server
 alias rake='noglob rake' #alias auto escapes square brackets when passing in parameters for rake tasks. I think. So this now works: rake db:task[param1,params2]
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
