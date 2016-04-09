@@ -10,7 +10,6 @@ tap 'homebrew/bundle'
 
 #Homebrew Formulaes
 brew 'git'
-brew 'rvm'
 brew 'node'
 brew 'tree'
 brew 'psql'

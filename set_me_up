@@ -3,21 +3,27 @@
 echo "Welcome, "$USER" to the Set up..."
 echo "This will install some useful apps, and set some basic osx settings"
 echo "First up, lets install all the things!"
-
+read
 
 ### Homebrew installs
 
 brew bundle
+brew install vim --override-system-vi
 
-touch ~/.vimrc
-
+read
 echo "Full disclosure.... we installed vim."
 echo ".........."
+read
 echo "But don't panic, we also included some basic sane vim setings"
 echo "in case you ever get stuck there"
 echo "Make a note, your leader key is the space bar, feel free to look at the vimrc for more info"
 echo "Press any key to continue"
 read
+
+### RVM
+
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
 
 ### Install oh-my-zsh
 
