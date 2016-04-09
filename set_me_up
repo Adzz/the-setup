@@ -42,7 +42,7 @@ then
   text_editor_choice
 fi
 
-if [ "$editor" == "vim"]
+if [ "$editor" == "vim" ]
 then
   echo "Great choice, and it's already installed. Double win."
 fi
