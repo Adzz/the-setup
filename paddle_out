@@ -17,7 +17,7 @@ sudo -v
 ################################################################################
 
 #      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
-
+get_xcode(){
 if ! xcode-select --print-path &> /dev/null; then
 
     # Prompt user to install the XCode Command Line Tools
@@ -50,10 +50,15 @@ if ! xcode-select --print-path &> /dev/null; then
     print_result $? 'Agree with the XCode Command Line Tools licence'
 
 fi
+}
+
+get_xcode
+
 ###
 
 echo "Awesome, now we'll install homebrew..."
-
+echo "Press enter to continue"
+read
 ################################################################################
 # Install Homebrew                                                             #
 ################################################################################
@@ -63,11 +68,13 @@ echo "Awesome, now we'll install homebrew..."
 ###
 
 echo "Which means we can get git!"
+read
 
 brew install git
 
 echo "Now we can get our dotfiles and Make Your OSX Great Again!"
 echo "We'll move to the home directory and clone down the dotfiles..."
+read
 
 cd ~ && git clone https://github.com/surfdome/the_setup && cd the_setup
 
