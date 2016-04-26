@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo "Now lets setup SSH keys for github etc"
+echo "tell us the email address you use with github:"
+read githubemail
+echo "When you're prompted to 'Enter a file in which to save the key,' press Enter. This accepts the default file location."
+ssh-keygen -t rsa -b 4096 -C "$githubemail"
+echo "Ensuring ssh-agent is enabled:"
+eval "$(ssh-agent -s)"
+echo "Adding your SSH key to the ssh-agent"
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+echo "SSH key is copied to clipboard, head to github to add it to your account"
+echo "see here for more details"
+echo "https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"

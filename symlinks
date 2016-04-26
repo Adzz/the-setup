@@ -6,15 +6,41 @@ echo "This will create symlinks from the dotfiles you have cloned down to"
 echo "the files your computer uses to configure your apps."
 echo "You can change and customize the dotfiles and push them to github for"
 echo "access to your settings on any computer"
+echo " "
+echo " "
+echo "This script will delete exising dotfiles, and replace them with the ones you have pulled down"
+echo "If you wish to keep existing your existing dot files and just move them to the repo so you can keep them portable"
+echo "press o now"
+
+# give the option to keep the dotfiles they have and just move them to the repo so they can be put on git hub
+# and linked and taken to a new computer.
+# do this by having a function that reads an input, if they press a certain command do x if another overwrite
+# otherwise ask to enter a valid command
+
+# when they ask to overwrite, delete any files that exist already, then just run the symlink below.
+# if they want to keep what they have on their machine and just copy it to repo, delete the dot files
+# in /Dotfiles that have the same name of the ones they want to keep, move the dotfiles to /Dotfiles
+# then run the symlink scripts below.
 
 echo "Press enter to continue"
 read
 
+
+
+
+
+
 #echo "Creating a symlink to our vimrc"
-#ln -sv ~/the_setup/Dotfiles/.vimrc ~/.vimrc
+#ln -sv ~/Dotfiles/.vimrc ~/.vimrc
 
 #echo "Creating a symlink for our zshrc"
-#ln -sv ~/the_setup/Dotfiles/.zshrc ~/.zshrc
+#ln -sv ~/Dotfiles/.zshrc ~/.zshrc
+
+#echo "Creating a symlink for our global gitignore"
+#ln -sv ~/Dotfiles/.gitignore_global ~/.gitignore_global
+
+#echo "Creating a symlink for our editor config file"
+#ln -sv ~/Dotfiles/.editorconfig ~/.editorconfig
 
 
 # this symlinks all the dotfiles to ~/
@@ -160,7 +186,7 @@ print_success() {
 
 
 # finds all dotfiles in the_setup/Dotfiles
-declare -a FILES_TO_SYMLINK=$(find ./Dotfiles -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
+declare -a FILES_TO_SYMLINK=$(find ~/Dotfiles -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

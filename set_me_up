@@ -22,12 +22,16 @@ read
 
 ### RVM
 
+echo "Installing RVM"
+read
+
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 
 ### Install oh-my-zsh
 
 echo "Installing oh-my-zsh for zsh"
+read
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "oh-my-zsh installed!"
 echo "Head here to pick a theme"
@@ -65,7 +69,7 @@ then
   brew cask install --appdir="/Applications" sublime-text
 fi
 
-if [ "$editor" != "atom" ] || [ "$editor" != "sublime" ]
+if [ "$editor" != "atom" ] || [ "$editor" != "sublime" ] || [ "$editor" != "vim" ]
 then
   echo "Tough you are getting sublime"
   brew cask install --appdir="/Applications" sublime-text
@@ -76,39 +80,19 @@ text_editor_choice
 
 ### OSX Defaults
 
-echo "Setting up some good OSX defaults"
 sh make_osx_great_again
-echo "Reseting the dock apps"
+
+# Dock Apps
+
 sh reset_dock_apps
 
 ### git setup
 
-echo "Boom."
-echo "Let's setup git.."
-echo "Which name do you want to use for git?"
-read gitusername
-echo "What email do you want to use for git?"
-read gitemail
-git config --global user.name "$gitusername"
-git config --global user.email "$gitemail"
-git config --global core.excludesfile '~/the_setup/Dotfiles/.gitignore_global'
-
+sh git_setup
 
 ### SSH keys
 
-echo "Now lets setup SSH keys for github etc"
-echo "tell us the email address you use with github:"
-read githubemail
-echo "When you're prompted to 'Enter a file in which to save the key,' press Enter. This accepts the default file location."
-ssh-keygen -t rsa -b 4096 -C "$githubemail"
-echo "Ensuring ssh-agent is enabled:"
-eval "$(ssh-agent -s)"
-echo "Adding your SSH key to the ssh-agent"
-ssh-add ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub
-echo "SSH key is copied to clipboard, head to github to add it to your account"
-echo "see here for more details"
-echo "https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"
+sh ssh_keys
 
 ### Symlinks...
 
@@ -117,3 +101,4 @@ sh symlinks
 echo "... Set up complete!"
 echo "One brand spanking new laptop ready for development."
 echo "Go get 'em tiger."
+read

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "Boom."
+echo "Let's setup git.."
+echo "Which name do you want to use for git?"
+read gitusername
+echo "What email do you want to use for git?"
+read gitemail
+git config --global user.name "$gitusername"
+git config --global user.email "$gitemail"
+git config --global core.excludesfile '~/the_setup/Dotfiles/.gitignore_global'
+echo "git has been setup"
+echo "any key to continue"
+read

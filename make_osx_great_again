@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+echo "Setting up some good OSX defaults"
+echo "These are quite basic and so should be fine for everyone but"
+echo "I'd recommend reading the script to undo anything that you wouldn't like"
+read
+
 # Ask for the administrator password upfront
 sudo -v
 
