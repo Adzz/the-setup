@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+echo "Welcome, "$USER" to the Set up..."
+echo "This will install some useful apps, and set some basic osx settings"
+echo "First up, lets install all the things!"
+read
+
+### Homebrew installs
+
+sh brew_installs
+read
+### RVM
+
+sh rvm
+read
+### Install oh-my-zsh
+
+sh oh_my_zsh
+read
+### Text Editor
+
+sh text_editor
+read
+### OSX Defaults
+
+sh make_osx_great_again
+read
+# Dock Apps
+
+sh reset_dock_apps
+read
+### git setup
+
+sh git_setup
+read
+### SSH keys
+
+sh ssh_keys
+read
+### Symlinks...
+
+sh symlinks
+read
+echo "... Set up complete!"
+echo "One brand spanking new laptop ready for development."
+echo "Go get 'em tiger."
+read

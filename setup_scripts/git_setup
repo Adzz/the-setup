@@ -4,6 +4,8 @@ echo "Boom."
 echo "Let's GIT setup..."
 echo "...."
 echo "Git it?"
+echo "....."
+read
 echo "Okay I'll stop."
 echo "Which name do you want to use for git?"
 read gitusername

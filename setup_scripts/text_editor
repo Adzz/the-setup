@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+text_editor_choice() {
+echo "Tell me, which text editor you would like to use?"
+read editor
+
+if [ "$editor" == "emacs" ]
+then
+  echo "Come on, be serious."
+  text_editor_choice
+fi
+
+if [ "$editor" == "vim" ]
+then
+  echo "Great choice, and it's already installed. Double win."
+fi
+
+if [ "$editor" == "atom" ]
+then
+  echo "Good choice"
+  brew cask install --appdir="/Applications" atom
+fi
+
+if [ "$editor" == "sublime" ]
+then
+  echo "Good choice"
+  brew cask install --appdir="/Applications" sublime-text
+fi
+
+if [ "$editor" != "atom" ] || [ "$editor" != "sublime" ] || [ "$editor" != "vim" ]
+then
+  echo "Tough you are getting sublime"
+  brew cask install --appdir="/Applications" sublime-text
+fi
+}
+
+text_editor_choice
+
+echo "Carry on, my wayward son...(/daughter)"
+read

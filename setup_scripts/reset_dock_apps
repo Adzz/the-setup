@@ -6,7 +6,8 @@ sudo -v
 
 # Add Apps to the dock#
 ########################
-
+echo "press enter to continue"
+read
 
  #Delete all items from dock to begin with
   defaults delete com.apple.dock persistent-apps

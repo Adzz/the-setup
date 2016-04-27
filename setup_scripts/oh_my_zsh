@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "Installing oh-my-zsh for zsh"
+read
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "oh-my-zsh installed!"
+echo "Head here to pick a theme"
+echo "https://github.com/robbyrussell/oh-my-zsh"
+echo "press any key to continue"
+read

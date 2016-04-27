@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Next let's Install RVM...."
+read
+
+\curl -sSL https://get.rvm.io | bash -s stable --ruby

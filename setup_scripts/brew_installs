@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+brew bundle
+
+read
+echo "Full disclosure.... we installed vim."
+echo ".........."
+read
+echo "But don't panic, we also included some basic sane vim setings"
+echo "in case you ever get stuck there"
+echo "We used Pathogen installed nerd tree, a color scheme and some other packages"
+echo "Details can be found in .vim in ~/Dotfiles"
+echo "Make a note, your leader key is the space bar, feel free to look at the vimrc for more info"
+echo "Press any key to continue"
+read

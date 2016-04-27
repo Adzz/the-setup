@@ -4,6 +4,7 @@
 echo "Welcome to Surfdome $USER!"
 echo "First things first... lets install Xcode..."
 echo "We just need your password first"
+read
 
 # Ask for password upfront:
 

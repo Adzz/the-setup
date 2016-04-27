@@ -16,6 +16,7 @@ brew 'postgresql'
 brew 'openssl'
 brew 'mysql'
 brew 'zsh'
+brew 'vim --override-system-vi'
 
 
 #Cask installs:
