@@ -1,9 +1,6 @@
-[submodule "/Users/Adz/Desktop/the_setup/.vim/bundle"]
-	path = /Users/Adz/Desktop/the_setup/.vim/bundle
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "/Users/Adz/Desktop/the_setup/.vim/bundle/nerdtree"]
 	path = /Users/Adz/Desktop/the_setup/.vim/bundle/nerdtree
-	url = git@github.com:ntpeters/vim-better-whitespace.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "/Users/Adz/Desktop/the_setup/.vim/bundle/vim-surround"]
 	path = /Users/Adz/Desktop/the_setup/.vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
